@@ -33,11 +33,14 @@ unsigned int pop(Stack *s, int *a)
 int main(void)
 {
     Stack s;
-    assert(push(&s, 10));
+    assert(push(&s, 1));
+    assert(push(&s, 2));
     {
-        int a;
+        int a, b;
         assert(pop(&s, &a));
-        assert(a == 10);
+        assert(pop(&s, &b));
+        assert(a == 2);
+        assert(b == 1);
     }
 
     {
