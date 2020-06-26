@@ -8,6 +8,11 @@ typedef struct
     unsigned int top;
 } Stack;
 
+void init(Stack *s)
+{
+    s->top = 0;
+}
+
 unsigned int push(Stack *s, int i)
 {
     if (s->top + 1 > STACK_MAX)
@@ -33,6 +38,7 @@ unsigned int pop(Stack *s, int *a)
 int main(void)
 {
     Stack s;
+    init(&s);
     assert(push(&s, 1));
     assert(push(&s, 2));
     {
